@@ -25,7 +25,7 @@ Videos On Code and Results Found - https://www.youtube.com/channel/UCKXwdkUKI9yC
 * Drive car from the CNN (convolutional neural network) model built based on training data in previous step
 
 ### Future Objectives
-Note: _As these objectives are accomplished, the related code will be added to this repository_
+_Note: As these objectives are accomplished, the related code will be added to this repository and these points will be moved to the **Achieved Objectives** section_
 
 * Detect a traffic light at an intersection and respond accodingly
 * Stop and avoid humans and other cars on crosswalks or on road
