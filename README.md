@@ -40,4 +40,4 @@ _Note: As these objectives are accomplished, the related code will be added to t
 * Implement LiDAR sensor to improve human and other car interaction/path planning
 * Add lights and blinkers to drive car in dark areas
 
-![Front of Car](/readme_assets/IMG_5997.jpg)
+![Front of Car](/readme_assets/IMG_6002.jpg)
