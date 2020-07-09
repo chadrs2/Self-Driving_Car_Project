@@ -23,7 +23,7 @@ Train car on built track using 1 Raspberry Pi camera as the only sensor
 Drive car from the CNN (convolutional neural network) model built based on training data in previous step
 
 ### Future Objectives
-_as these objectives are accomplished, the related code will be added to this repository_
+<_As these objectives are accomplished, the related code will be added to this repository_>
 
 Detect a traffic light at an intersection and respond accodingly
 Stop and avoid humans and other cars on crosswalks or on road
