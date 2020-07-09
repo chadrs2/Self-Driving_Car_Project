@@ -20,17 +20,17 @@ Videos On Code and Results Found - https://www.youtube.com/channel/UCKXwdkUKI9yC
 ## Objectives
 ### Achieved Objectives
 * Detect lane lines
-** Code: **DetectLaneLines.py**
+  * Code: **DetectLaneLines.py**
 * Detect stop sign and stop car 
-** Code: **DetectStopSign_StopCar.py**
-** Data: **stopsign_good.xml**
+  * Code: **DetectStopSign_StopCar.py**
+  * Data: **stopsign_good.xml**
 * Train car on built track using 1 Raspberry Pi camera as the only sensor
-** Code: 
-*** To drive car from computer and collect data: **DriveCar_RecordData_Threading.py**
-*** To pull data from github and build the CNN model: **BuildCNNModel.py**
-*** _Note: **model.h5** and **model.tflite** are my models built from my data_
+  * Code: 
+    * To drive car from computer and collect data: **DriveCar_RecordData_Threading.py**
+    * To pull data from github and build the CNN model: **BuildCNNModel.py**
+    * _Note: **model.h5** and **model.tflite** are my models built from my data_
 * Drive car from the CNN (convolutional neural network) model built based on training data in previous step
-** Code: **DriveAutonomously.py**
+  * Code: **DriveAutonomously.py**
 
 ### Future Objectives
 _Note: As these objectives are accomplished, the related code will be added to this repository and these points will be moved to the **Achieved Objectives** section_
