@@ -36,7 +36,7 @@ Videos On Code and Results Found - https://www.youtube.com/channel/UCKXwdkUKI9yC
 ### Future Objectives
 _Note: As these objectives are accomplished, the related code will be added to this repository and these points will be moved to the **Achieved Objectives** section_
 
-* Detect a traffic light at an intersection and respond accodingly
+* Detect a traffic light at an intersection and respond accordingly
 * Stop and avoid humans and other cars on crosswalks or on road
 * Implement LiDAR sensor to improve human and other car interaction/path planning
 * Add lights and blinkers to drive car in dark areas
