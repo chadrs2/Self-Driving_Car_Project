@@ -1,5 +1,6 @@
 # Self-Driving Car Project with a Raspberry Pi using the Raspian OS
 ![Front of Car](/readme_assets/IMG_6002.jpg)
+![Car Body](/readme_assets/IMG_4112.jpg)
 This project contains code that can be implemented on a Raspberry Pi using the Python 3 coding language. This code is designed to be implemented on an already built car with 1 Raspberry Pi, running the newest Raspian OS, as the single-board computer controlling the car. See the **Objectives** point below to see what the code can make the car do.
 
 Videos On Code and Results Found - https://www.youtube.com/channel/UCKXwdkUKI9yCJQC7W0Y0AXw
