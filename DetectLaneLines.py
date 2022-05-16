@@ -3,7 +3,7 @@
 #### --------------------- ####
 #### Objective:		   ####
 #### > Drive car forward   ####
-####   until a sotpsign is ####
+####   until a stopsign is ####
 ####   spotted on the cam  ####
 ###############################
 from picamera.array import PiRGBArray
@@ -85,30 +85,30 @@ def draw_the_lines(img,lines):
 
 def process(img):
     #image dimensions
-	height = img.shape[0]
-	width = img.shape[1]
-	#Bottom triangle region
-	#region_of_interest_vertices = [
-	#    (0, height),
-	#    (width/2, height/2),
-	#    (width, height)
-	#]
-	#Bottom half of image
-	region_of_interest_vertices = [
-		(0, height),
-		(0, height/2),
-		(width, height/2),
-		(width, height)
-	]
-	gray_img = cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)
+    height = img.shape[0]
+    width = img.shape[1]
+    #Bottom triangle region
+    #region_of_interest_vertices = [
+    #    (0, height),
+    #    (width/2, height/2),
+    #    (width, height)
+    #]
+    #Bottom half of image
+    region_of_interest_vertices = [
+    	(0, height),
+    	(0, height/2),
+    	(width, height/2),
+    	(width, height)
+    ]
+    gray_img = cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)
     #Gaussian Blur will remove noise in image
     blur = cv2.GaussianBlur(gray_img, (5,5),0)
-	#Canny(img,minThreshold,maxThreshold) 1:2 or 1:3
-	canny_image = cv2.Canny(gray_img,50,150)
-	cropped_image = region_of_interest(canny_image,
-	                np.array([region_of_interest_vertices], np.int32),)
-	lines = cv2.HoughLinesP(cropped_image,
-                    #smaller rho/theta=more accurate longer processing time
+    #Canny(img,minThreshold,maxThreshold) 1:2 or 1:3
+    canny_image = cv2.Canny(gray_img,50,150)
+    cropped_image = region_of_interest(canny_image,
+                    np.array([region_of_interest_vertices], np.int32),)
+    lines = cv2.HoughLinesP(cropped_image,
+			    #smaller rho/theta=more accurate longer processing time
                             rho=6, #number of pixels
                             theta=np.pi/60,
                             threshold=160,
@@ -124,23 +124,22 @@ def process(img):
 # Begin Camera video and driving forward #
 camera.start_preview()
 for frame in camera.capture_continuous(rawCapture,format="rgb",use_video_port=True):
-	# Begin driving at medium speed
-	#pwm_motor.ChangeDutyCycle(50) #medium speed
+    # Begin driving at medium speed
+    #pwm_motor.ChangeDutyCycle(50) #medium speed
     #pwm_motor.ChangeDutyCycle(80) #high speed
-	pwm_motor.ChangeDutyCycle(70) #med-hi speed
-	GPIO.output(in1,GPIO.HIGH)
-	GPIO.output(in2,GPIO.LOW)
-	pwm_servo.ChangeDutyCycle(12.5)
-	# grab raw NumPy array representing image - 3D array
-	image=frame.array
+    pwm_motor.ChangeDutyCycle(70) #med-hi speed
+    GPIO.output(in1,GPIO.HIGH)
+    GPIO.output(in2,GPIO.LOW)
+    pwm_servo.ChangeDutyCycle(12.5)
+    # grab raw NumPy array representing image - 3D array
+    image=frame.array
     #Find lanes in image region of interest and draw lines on them
     image = process(image)
-	break
-	# Wait 1 ms and read key input
-	if cv2.waitKey(1) & 0xFF == ord('q'):
+    # Wait 1 ms and read key input
+    if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-	#clear the stream in preparation for the next frame
-	rawCapture.truncate(0)
+    #clear the stream in preparation for the next frame
+    rawCapture.truncate(0)
 # End camera functions
 camera.stop_preview()
 cv2.destroyAllWindows()
